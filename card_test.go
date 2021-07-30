@@ -27,3 +27,26 @@ func TestCard(t *testing.T) {
 		}
 	}
 }
+
+func TestNew(t *testing.T) {
+	cards := New()
+	// 13 ranks * 4 suits
+	if len(cards) != 52 {
+		t.Errorf("Wrong number of cards in a new deck")
+	}
+}
+
+func ExampleCard() {
+	fmt.Println(Card{Rank: Ace, Suit: Heart})
+	fmt.Println(Card{Rank: Two, Suit: Spade})
+	fmt.Println(Card{Rank: Four, Suit: Diamond})
+	fmt.Println(Card{Rank: Nine, Suit: Club})
+	fmt.Println(Card{Suit: Joker})
+
+	// Output
+	// Ace of Hearts
+	// Two of Spades
+	// Four of Diamonds
+	// Nine of Clubs
+	// Joker
+}
